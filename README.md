@@ -85,7 +85,7 @@ sftp nht8@sftp.sfwmd.gov
 
 ## How to Run the Project
 
-The project runs automatically via a `crontab` schedule. The crontab executes a series of shell scripts, which in turn call the Python scripts to process data, generate predictions, and upload results.
+The project runs automatically via a `crontab` schedule. The crontab executes a series of shell scripts, which in turn call the Python scripts to process data, generate predictions, and upload results. The time is in UTC for all sites.
 
 ### Workflow Order
 1. **`delete_forecasts.sh`** (12:00 AM): Deletes outdated forecast files.
