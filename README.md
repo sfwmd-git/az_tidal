@@ -89,15 +89,17 @@ The project runs automatically via a `crontab` schedule. The crontab executes a 
 
 ### Workflow Order
 1. **`delete_forecasts.sh`** (12:00 AM): Deletes outdated forecast files.
-7. **`run_gfs_det.sh`** (5:00 AM): Runs deterministic GFS forecasts for all sites.
+7. **`run_gfs_det.sh`** (5:00 AM): Runs deterministic GFS forecasts for all sites (~15 minutes)
 8. **`run_gfs_ens.sh`** (5:10 AM): Runs GFS ensemble forecasts (~4 hours).
-2. **`download_all_euro.sh`** (7:45 AM): Downloads ECMWF forecast data.
-3. **`run_ecmwf_det.sh`** (7:50 AM): Runs deterministic ECMWF forecasts for all sites.
-4. **`run_ecmwf_ens_eastfl.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for East Florida sites.
-5. **`run_ecmwf_ens_westfl.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for West Florida sites.
-6. **`run_ecmwf_ens_flkeys.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for Florida Keys sites.
-9. **`get_data_together.sh`** (10:53 AM): Consolidates forecast data into master CSVs.
-10. **`put_aztidal.sh`** (10:55 AM): Uploads master CSVs and site-specific files to the SFWMD's SFTP server.
+2. **`download_all_euro.sh`** (7:45 AM): Downloads ECMWF forecast data (<1 min).
+3. **`run_ecmwf_det.sh`** (7:50 AM): Runs deterministic ECMWF forecasts for all sites (4 minutes).
+4. **`run_ecmwf_ens_eastfl.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for East Florida sites (Lake Worth, Port Everglades, Virginia Key) (~1.5 hours).
+5. **`run_ecmwf_ens_westfl.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for West Florida sites (Naples, Fort Myers) (~1 hour).
+6. **`run_ecmwf_ens_flkeys.sh`** (8:00 AM): Processes ECMWF ensemble forecasts for Florida Keys sites (Vaca Key, Key West) (~1 hour).
+9. **`get_data_together.sh`** (10:53 AM): Consolidates forecast data into master CSVs (<1 min).
+10. **`put_aztidal.sh`** (10:55 AM): Uploads master CSVs and site-specific files to the SFWMD's SFTP server (<1 min).
+11. Evertyhing should uploaded to the SFTP server by 11 AM UTC which is 7 AM EDT and 6 AM EST.
+
 
 ---
 
