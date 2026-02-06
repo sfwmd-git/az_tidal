@@ -1,4 +1,4 @@
-# Tidal Wave Prediction System
+# Tide Prediction System
 
 A comprehensive system for predicting tidal water levels using meteorological and oceanographic data from multiple forecast models (GFS and ECMWF) with various model configurations.
 
